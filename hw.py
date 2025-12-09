@@ -27,7 +27,14 @@ count_occurrences([1, 2, 3, 1, 2, 4, 5, 4]) -> {1: 2, 2: 2, 3: 1, 4: 2, 5: 1}
 """
 
 def count_occurrences(my_list: list) -> dict:
-    pass
+    result ={}
+    for num in my_list:
+        if num in result:
+            result[num]+=1
+        else:
+            result[num]=1
+
+    return result
 
 
 """
