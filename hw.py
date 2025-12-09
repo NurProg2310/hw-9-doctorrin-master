@@ -47,7 +47,13 @@ common_elements([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]) -> [3, 4, 5]
 """
 
 def common_elements(list1: list, list2: list) -> list:
-    pass
+    result =[]
+    for i in range(list1[0],list1[-1]):
+        if list1[i] in list2:
+            result.append(list1[i])
+    return result
+
+
 
 """
 Exercise-5: Character frequency
