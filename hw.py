@@ -4,11 +4,17 @@ Write a function "missing_elements(my_list: list) -> list" that takes a
 sorted list of integers and returns a list of missing integers in the range of the list.
 
 Example:
-missing_elements([1, 2, 4, 6, 7]) -> [3, 5]0
+missing_elements([1, 2, 4, 6, 7]) -> [3, 5]
 """
 
 def missing_elements(my_list: list) -> list:
-    pass
+    result = []
+    if not my_list:
+        return result
+    for i in range(my_list[0],my_list[-1]):
+        if i not in my_list:
+            result.append(i)
+    return result
 
 """
 Exercise-2: Count occurrences
