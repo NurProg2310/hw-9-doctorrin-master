@@ -65,7 +65,15 @@ char_frequency('hello world') -> {'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1
 """
 
 def char_frequency(my_string: str) -> dict:
-    pass
+    result ={}
+    for s in my_string:
+        if s in result:
+            result[s]+=1
+        else:
+            result[s]=1
+    return result
+
+
 
 """
 Exercise-6: Unique words
@@ -77,7 +85,11 @@ unique_words('hello world hello') -> 2
 """
 
 def unique_words(my_string: str) -> int:
-    pass
+     ls = list(my_string.split())
+     return len(set(ls))
+
+
+
 
 """
 Exercise-7: Word frequency
@@ -89,7 +101,13 @@ word_frequency('hello world hello') -> {'hello': 2, 'world': 1}
 """
 
 def word_frequency(my_string: str) -> dict:
-    pass
+    res = {}
+    for i in list(my_string.split()):
+        if i in res:
+            res[i]+=1
+        else:
+            res[i]=1
+    return res
 
 """
 Exercise-8: Count elements in range
