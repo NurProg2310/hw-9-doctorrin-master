@@ -133,7 +133,11 @@ swap_dict({1: 'a', 2: 'b', 3: 'c'}) -> {'a': 1, 'b': 2, 'c': 3}
 """
 
 def swap_dict(d: dict) -> dict:
-    pass
+    result = {}
+    for kay, value in d.items():
+        if value not in result:
+            result[value] = kay
+    return result
 
 """
 Exercise-10: Subset check
@@ -145,8 +149,10 @@ is_subset({1, 2, 3, 4, 5}, {3, 4, 5}) -> True
 """
 
 def is_subset(set1: set, set2: set) -> bool:
-    pass
-
+    for element in set2:
+        if element not in set1:
+            return False
+    return True
 """
 Exercise-11: Intersection of lists
 Write a function "list_intersection(list1: list, list2: list) -> list" that takes two
@@ -156,8 +162,16 @@ Example:
 list_intersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]) -> [3, 4, 5]
 """
 
+
 def list_intersection(list1: list, list2: list) -> list:
-    pass
+    res = []
+    ls = set(list1)
+    for i in ls:
+        if i in list2:
+            res.append(i)
+    return res
+
+
 
 """
 Exercise-12: Union of lists
@@ -168,8 +182,10 @@ Example:
 list_union([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]) -> [1, 2, 3, 4, 5, 6, 7]
 """
 
+
 def list_union(list1: list, list2: list) -> list:
-    pass
+    ls = list1+list2
+    return list(set(ls))
 
 """
 Exercise-13: Most frequent element
@@ -181,8 +197,16 @@ most_frequent([1, 2, 3, 1, 2, 4, 5, 4, 1]) -> 1
 """
 
 def most_frequent(my_list: list) -> int:
-    pass
+    max_count = 0
+    most_common = None
 
+    for i in my_list:
+        count = my_list.count(i)
+        if count > max_count:
+            max_count = count
+            most_common = i
+
+    return most_common
 """
 Exercise-14: Least frequent element
 Write a function "least_frequent(my_list: list) -> int" that takes a
@@ -193,5 +217,15 @@ least_frequent([1, 2, 3, 1, 2, 4, 5, 4, 1]) -> 3
 """
 
 def least_frequent(my_list: list) -> int:
-    pass
+    min_count = len(my_list)
+    least_common = None
 
+    for i in my_list:
+        count = my_list.count(i)
+        if count < min_count:
+            min_count = count
+            least_common = i
+
+    return least_common
+
+print(least_frequent([1, 2, 3, 1, 2, 4, 5, 4, 1]))
