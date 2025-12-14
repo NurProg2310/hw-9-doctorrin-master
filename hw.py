@@ -62,7 +62,7 @@ def unique_words(my_string: str) -> int:
 """
 Exercise-7: Word frequency
 Write a function "word_frequency(my_string: str) -> dict" that takes a
-string and returns a dictionary with the frequency of each word in the string.
+string and returns a dictionary with the frequency of each word in the string.7
 """
 
 def word_frequency(my_string: str) -> dict:
